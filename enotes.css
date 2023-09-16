@@ -1,0 +1,198 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #0E2954;
+    font-family: 'Bree Serif', serif;
+    scroll-behavior: smooth;
+}
+
+
+.accordionGrid {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin: 0 20px 0 20px;
+    grid-template-columns: repeat(3, 1fr);
+    /* background-color: #5254ec; */
+    /* background-color:#5025D1; */
+}
+
+.accordion {
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 0.5em;
+    border-color: #F5C7F7;
+    box-shadow: 2px 2px 0 #F5C7F7;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight:400;
+    transition: 0.4s;
+    text-align:center;
+}
+
+.dropdowncolor {
+    border-radius: 0.5em;
+}
+
+.active,
+.accordion:hover {
+    background-color: #fff;
+}
+
+
+.panel {
+    margin: 0px 10px 10px 10px;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    gap: 0.75em;
+}
+
+.accordion:after {
+    content: "\02795";
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #fff;
+    float: right;
+    margin-left: 5px;
+}
+
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+.pdfEdit {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: space-between;
+    gap: 0.75em;
+}
+
+
+.button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #17795E;
+    background-color: #209978;
+    overflow: hidden;
+}
+
+
+.underlineRemove {
+    text-decoration: none;
+}
+
+.button,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+
+}
+
+
+.button .button__text {
+    transform: translateX(22px);
+    color: #fff;
+    font-weight: 500;
+
+
+}
+
+
+.button .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #17795E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.button .svg {
+    width: 20px;
+    fill: #fff;
+}
+
+
+.button:hover {
+    background: #17795E;
+}
+
+
+.button:hover .button__text {
+    color: transparent;
+}
+
+
+.button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+
+.button:active .button__icon {
+    background-color: #146c54;
+}
+
+
+.button:active {
+    border: 1px solid #146c54;
+}
+
+.subjects {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+
+.btnEdit {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-content: space-between;
+    width: 100px;
+    height: 20px;
+}
+@media (max-width: 768px) {
+    .accordionGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .accordionGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
